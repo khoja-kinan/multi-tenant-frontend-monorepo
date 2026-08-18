@@ -8,7 +8,7 @@ as data, not code. Both apps are built from the same `@repo/ui` components
 (`AppShell`, `PageContainer`, `SectionHeader`, `FeatureCard`, `StatCard`,
 `SurfaceCard`, `Button`, `ThemeBadge`) and the same shared feature pair
 (`@repo/auth-demo`, `@repo/account-demo`) at `/account`; only the theme
-tokens and copy passed into them differ.
+tokens, copy, and mock/fixture data passed into them differ.
 
 ## What each tenant supplies
 

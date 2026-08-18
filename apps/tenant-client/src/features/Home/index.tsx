@@ -27,7 +27,7 @@ const ARCHITECTURE_HIGHLIGHTS = [
   { title: "Shared UI package", description: "Buttons, cards, containers, and layout primitives reused across tenants." },
   { title: "Mock API layer", description: "A route-matching dispatcher swapped in at the transport layer — no backend required." },
   { title: "React Query data hooks", description: "Typed useQueryApi / useMutationApi hooks abstract away the request layer." },
-  { title: "White-label theming", description: "Aurora and Nova share every package, differing only in configuration." },
+  { title: "White-label theming", description: "Aurora and Nova share every package, differing by configuration, theme, and tenant-specific data." },
 ];
 
 const SHARED_PACKAGES = [
@@ -66,8 +66,8 @@ const HomeScreen: React.FC = () => {
           <h1 className={s.heroTitle}>Same Architecture, Different Tenant Configuration</h1>
           <p className={s.heroSubtitle}>
             Aurora runs on the exact same Turborepo, shared packages, and mock runtime as Nova —
-            only the theme tokens and app-level configuration differ. This page demonstrates
-            white-label architecture, not a separate product.
+            only the theme tokens, app-level configuration, and mock data differ. This page
+            demonstrates white-label architecture, not a separate product.
           </p>
           <div className={s.heroActions}>
             <Button as="a" href="#architecture">
@@ -101,7 +101,7 @@ const HomeScreen: React.FC = () => {
         <PageContainer>
           <SectionHeader
             title="Shared Packages"
-            description="The same packages power both Aurora and Nova — only configuration differs."
+            description="The same packages power both Aurora and Nova — only configuration and tenant-specific data differ."
           />
           <div className={s.grid}>
             {SHARED_PACKAGES.map((item) => (

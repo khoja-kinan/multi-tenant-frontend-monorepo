@@ -30,7 +30,7 @@ const AccountScreen: React.FC = () => {
           <h1 className={s.title}>Account architecture, live</h1>
           <p className={s.subtitle}>
             A compact auth + account feature pair (<code>@repo/auth-demo</code>, <code>@repo/account-demo</code>)
-            shared with Aurora — identical implementation, tenant-specific theme only.
+            shared with Aurora — same implementation, tenant-specific configuration and data.
           </p>
         </div>
 

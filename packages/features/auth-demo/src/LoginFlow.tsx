@@ -7,7 +7,8 @@ import { OtpStep } from "./components/OtpStep";
 /**
  * The unauthenticated fallback for ProtectedRoute: a compact two-step
  * credentials → one-time-code flow, sharing one card shell. Renders
- * identically across tenants — only the surrounding theme tokens differ.
+ * identically across tenants — only the surrounding theme tokens and mock
+ * data differ.
  */
 export const LoginFlow: FC = () => {
   const [step, setStep] = useState<"credentials" | "otp">("credentials");

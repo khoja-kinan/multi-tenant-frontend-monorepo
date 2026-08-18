@@ -79,9 +79,9 @@ would.
 `SecuritySettings` (notification preferences + session refresh/sign-out), and
 `RecentActivity`, each backed by a real `useQueryApi`/`useMutationApi` call.
 Both packages are mounted with identical code in Nova and Aurora — this is
-the same "shared feature package, tenant supplies only config/theme" pattern
-`@repo/ui` demonstrates, just at the feature-package layer instead of the
-component layer.
+the same "shared feature package, tenant supplies config, theme, and its own
+mock data" pattern `@repo/ui` demonstrates, just at the feature-package layer
+instead of the component layer.
 
 See [`mock-runtime.md`](mock-runtime.md) for how the mock layer is wired up,
 [`shared-packages.md`](shared-packages.md) for package-by-package detail, and

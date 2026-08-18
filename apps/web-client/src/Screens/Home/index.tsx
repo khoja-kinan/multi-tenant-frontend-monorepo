@@ -28,7 +28,7 @@ const ARCHITECTURE_HIGHLIGHTS = [
   { title: "Shared UI package", description: "Buttons, cards, containers, and layout primitives reused across tenants." },
   { title: "Mock API layer", description: "A route-matching dispatcher swapped in at the transport layer — no backend required." },
   { title: "React Query data hooks", description: "Typed useQueryApi / useMutationApi hooks abstract away the request layer." },
-  { title: "White-label theming", description: "Nova and Aurora share every package, differing only in configuration." },
+  { title: "White-label theming", description: "Nova and Aurora share every package, differing by configuration, theme, and tenant-specific data." },
 ];
 
 const SHARED_PACKAGES = [
@@ -103,7 +103,7 @@ const HomeScreen: React.FC = () => {
         <PageContainer>
           <SectionHeader
             title="Shared Packages"
-            description="The same packages power both Nova and Aurora — only configuration differs."
+            description="The same packages power both Nova and Aurora — only configuration and tenant-specific data differ."
           />
           <div className={s.grid}>
             {SHARED_PACKAGES.map((item) => (

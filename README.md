@@ -12,6 +12,8 @@ is actually mounted and clickable, not just described in prose.
 Everything in this repository runs entirely against a **local mock API layer** —
 no backend, database, or third-party account is required to explore it.
 
+**Repository:** [github.com/khoja-kinan/multi-tenant-frontend-monorepo](https://github.com/khoja-kinan/multi-tenant-frontend-monorepo)
+
 ## Live Demo
 
 The same shared frontend architecture is deployed as two independent tenant
@@ -19,11 +21,12 @@ applications with different visual identities.
 
 | Tenant | Theme | Live Demo |
 | --- | --- | --- |
-| **Nova** | Graphite / Emerald | [Open Nova](https://multi-tenant-frontend-monorepo.vercel.app) |
-| **Aurora** | Warm Neutral / Cobalt | [Open Aurora](https://multi-tenant-frontend-monorepo-auro.vercel.app) |
+| **Nova** | Graphite / Emerald | [Open Nova](https://multi-tenant-frontend-monorepo-nova.vercel.app/) |
+| **Aurora** | Warm Neutral / Cobalt | [Open Aurora](https://multi-tenant-frontend-monorepo-one.vercel.app/) |
 
 Both deployments use the same shared UI, auth, account, query, API, and theme
-packages. Only tenant-level configuration and theme tokens differ.
+packages. Tenant-level configuration, theme tokens, and mock/fixture data are
+what differ.
 
 ### Try the shared account flow
 
@@ -46,8 +49,8 @@ No real account or backend is required.
 ![Aurora — alternate tenant](docs/screenshots/aurora-home.png)
 
 Both applications use the same architecture, shared components, feature
-packages, and data layer. The visual difference comes entirely from
-tenant-specific configuration and theme tokens.
+packages, and data-layer implementation. The differences come from
+tenant-specific configuration, theme tokens, and mock data/state.
 
 ## Overview
 
@@ -56,8 +59,8 @@ This repository is built with Turborepo and pnpm workspaces.
 `web-client` (**Nova**) and `tenant-client` (**Aurora**) are two separate
 applications that import the same shared packages — UI components, the
 API/query layer, theme system, and shared feature packages (`@repo/auth-demo`,
-`@repo/account-demo`) — while differing only in application configuration and
-theme tokens.
+`@repo/account-demo`) — while differing in application configuration, theme
+tokens, and tenant-specific mock data/state.
 
 Each tenant exposes two primary routes:
 
@@ -70,8 +73,8 @@ Each tenant exposes two primary routes:
   tenants.
 
 The repository is intentionally scoped to this one story: two tenant
-applications sharing a single package graph, differentiated only by
-configuration and theme.
+applications sharing a single package graph, differentiated by
+configuration, theme, and tenant-specific mock data/state.
 
 ## Key Engineering Highlights
 
@@ -185,8 +188,8 @@ Each tenant supplies its own token values while consuming the same components.
 
 A reusable auth/account feature pair mounted identically in Nova and Aurora.
 
-The implementation is shared; only tenant configuration and theme tokens
-change.
+The implementation is shared; only tenant configuration, theme tokens, and
+mock data/state change.
 
 See [`docs/shared-packages.md`](docs/shared-packages.md) for a more detailed
 package breakdown and dependency direction.
@@ -223,8 +226,8 @@ data.
 Both packages are mounted with **identical implementation code** in Nova and
 Aurora.
 
-The only application-level difference is which tenant configuration and theme
-tokens are active.
+The only application-level difference is tenant configuration, theme tokens,
+and the mock/fixture data each app runs against.
 
 ## Architecture
 
