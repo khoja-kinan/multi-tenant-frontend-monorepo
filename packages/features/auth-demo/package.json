@@ -19,7 +19,8 @@
     "@repo/mock-api": "workspace:*",
     "@repo/config": "workspace:*",
     "classnames": "^2.5.1",
-    "zustand": "^5"
+    "zustand": "^5",
+    "use-sync-external-store": "^1.2.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
