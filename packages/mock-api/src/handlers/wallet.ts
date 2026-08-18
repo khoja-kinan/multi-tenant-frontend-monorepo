@@ -1,6 +1,7 @@
 import { RouteDef } from "../types";
 import { mockState, createTransaction } from "../state";
-import { DEMO_TRANSACTION_LIST } from "../fixtures/wallet";
+import { getDemoTransactionList } from "../fixtures/wallet";
+import { getMockTenant } from "../tenant";
 
 export const walletRoutes: RouteDef[] = [
   {
@@ -11,7 +12,7 @@ export const walletRoutes: RouteDef[] = [
   {
     method: "get",
     pattern: "demo/wallet/transactions",
-    handler: () => ({ data: DEMO_TRANSACTION_LIST }),
+    handler: () => ({ data: getDemoTransactionList(getMockTenant()) }),
   },
   {
     method: "post",

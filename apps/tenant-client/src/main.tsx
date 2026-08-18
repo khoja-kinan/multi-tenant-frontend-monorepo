@@ -6,7 +6,7 @@ import App from "./App";
 // Portfolio demo mode: all API calls are served from local mock data.
 // Set VITE_ENABLE_API_MOCKS=false only if you have wired up a real backend.
 if (import.meta.env.VITE_ENABLE_API_MOCKS !== "false") {
-  installMockApi();
+  installMockApi("Aurora");
 }
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

@@ -1,9 +1,5 @@
 import { emptyMeta } from "./pagination";
-
-export const DEMO_BALANCE = {
-  available: 1250,
-  pending: 0,
-};
+import type { MockTenant } from "../tenant";
 
 const makeTransaction = (id: number, type: "credit" | "debit", amount: number, daysAgo: number) => {
   const createdAt = new Date(Date.now() - daysAgo * 86400000).toISOString();
@@ -16,13 +12,34 @@ const makeTransaction = (id: number, type: "credit" | "debit", amount: number, d
   };
 };
 
-export const DEMO_TRANSACTIONS = [
-  makeTransaction(1, "credit", 300, 1),
-  makeTransaction(2, "debit", 150, 3),
-  makeTransaction(3, "credit", 500, 7),
-];
+const WALLET_FIXTURES: Record<
+  MockTenant,
+  { balance: { available: number; pending: number }; transactions: ReturnType<typeof makeTransaction>[] }
+> = {
+  Nova: {
+    balance: { available: 1250, pending: 0 },
+    transactions: [
+      makeTransaction(1, "credit", 300, 1),
+      makeTransaction(2, "debit", 150, 3),
+      makeTransaction(3, "credit", 500, 7),
+    ],
+  },
+  Aurora: {
+    balance: { available: 2840, pending: 0 },
+    transactions: [
+      makeTransaction(1, "credit", 650, 1),
+      makeTransaction(2, "debit", 220, 3),
+      makeTransaction(3, "credit", 180, 7),
+    ],
+  },
+};
 
-export const DEMO_TRANSACTION_LIST = {
-  data: DEMO_TRANSACTIONS,
-  meta: { ...emptyMeta(1), total: DEMO_TRANSACTIONS.length },
+export const getDemoBalance = (tenant: MockTenant) => ({ ...WALLET_FIXTURES[tenant].balance });
+
+export const getDemoTransactionList = (tenant: MockTenant) => {
+  const transactions = WALLET_FIXTURES[tenant].transactions;
+  return {
+    data: transactions,
+    meta: { ...emptyMeta(1), total: transactions.length },
+  };
 };

@@ -1,6 +1,7 @@
-import { DEMO_BALANCE } from "./fixtures/wallet";
-import { DEMO_PROFILE } from "./fixtures/profile";
+import { getDemoBalance } from "./fixtures/wallet";
+import { getDemoProfile } from "./fixtures/profile";
 import { DEMO_SESSION } from "./fixtures/session";
+import { getMockTenant } from "./tenant";
 
 export type TransactionStatus = "pending" | "settled" | "failed";
 
@@ -16,8 +17,8 @@ export type MockTransaction = {
 type State = {
   isAuthenticated: boolean;
   session: typeof DEMO_SESSION | null;
-  profile: typeof DEMO_PROFILE;
-  balance: typeof DEMO_BALANCE;
+  profile: ReturnType<typeof getDemoProfile>;
+  balance: ReturnType<typeof getDemoBalance>;
   transactions: Map<number, MockTransaction>;
   nextTransactionId: number;
 };
@@ -25,8 +26,8 @@ type State = {
 const createInitialState = (): State => ({
   isAuthenticated: false,
   session: null,
-  profile: { ...DEMO_PROFILE },
-  balance: { ...DEMO_BALANCE },
+  profile: getDemoProfile(getMockTenant()),
+  balance: getDemoBalance(getMockTenant()),
   transactions: new Map(),
   nextTransactionId: 5001,
 });
