@@ -1,0 +1,32 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: vars.$space-4;
+  margin-bottom: vars.$space-4;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-1;
+}
+
+.title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--app_text);
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  color: var(--app_text_muted);
+}
+
+.action {
+  flex-shrink: 0;
+}

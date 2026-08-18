@@ -1,0 +1,68 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-4;
+  height: 64px;
+}
+
+.wordmark {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--app_text);
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-8;
+  padding-top: vars.$space-10;
+  padding-bottom: vars.$space-12;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-2;
+  max-width: 640px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--app_text);
+
+  @media (max-width: #{vars.$screen-sm}) {
+    font-size: 22px;
+  }
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--app_text_muted);
+
+  code {
+    color: var(--app_accent);
+    font-size: 13px;
+  }
+}
+
+.footerBar {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-1;
+  padding: vars.$space-6 0;
+  font-size: 13px;
+}
+
+.footerMeta {
+  color: var(--app_text_muted);
+  font-size: 12px;
+}

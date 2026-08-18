@@ -1,0 +1,38 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-4;
+  height: 100%;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: vars.$space-3;
+  color: var(--app_text_muted);
+  font-size: 13px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-3;
+}
+
+.error {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-danger, #dc2626);
+}
+
+.success {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-success, #16a34a);
+}
+
+.submit {
+  align-self: flex-start;
+}

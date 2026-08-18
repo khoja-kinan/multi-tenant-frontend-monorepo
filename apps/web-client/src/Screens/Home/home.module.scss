@@ -1,0 +1,120 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.headerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-4;
+  height: 64px;
+}
+
+.wordmark {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--app_text);
+}
+
+.nav {
+  flex: 1;
+  justify-content: center;
+
+  @media (max-width: vars.$screen-sm) {
+    display: none;
+  }
+}
+
+.hero {
+  padding: vars.$space-16 0 vars.$space-12;
+  background: var(--app_hero_bg);
+  border-bottom: 1px solid var(--border_primary);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: vars.$space-4;
+  max-width: 760px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--app_text);
+
+  @media (max-width: vars.$screen-sm) {
+    font-size: 28px;
+  }
+}
+
+.heroSubtitle {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--app_text_muted);
+  max-width: 620px;
+}
+
+.heroActions {
+  display: flex;
+  gap: vars.$space-3;
+  margin-top: vars.$space-2;
+  flex-wrap: wrap;
+}
+
+.section {
+  padding: vars.$space-12 0;
+  // Sticky header is 64px tall; keep section headings clear of it when
+  // jumped to via anchor navigation.
+  scroll-margin-top: 80px;
+
+  &:nth-of-type(even) {
+    background: var(--app_section_alt_bg);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: vars.$space-4;
+  margin-top: vars.$space-6;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: vars.$space-4;
+  margin-top: vars.$space-6;
+}
+
+.note {
+  margin-top: vars.$space-6;
+}
+
+.noteText {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--app_text_muted);
+
+  code {
+    color: var(--app_accent);
+    font-size: 12px;
+  }
+}
+
+.footerBar {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-1;
+  padding: vars.$space-6 0;
+  font-size: 13px;
+}
+
+.footerMeta {
+  color: var(--app_text_muted);
+  font-size: 12px;
+}

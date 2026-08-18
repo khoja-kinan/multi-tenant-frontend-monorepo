@@ -1,0 +1,23 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-5;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: vars.$space-5;
+  align-items: stretch;
+}
+
+@media (min-width: #{vars.$screen-xl}) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

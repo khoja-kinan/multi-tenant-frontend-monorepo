@@ -1,0 +1,69 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-4;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.description {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.track {
+  flex-shrink: 0;
+  position: relative;
+  width: 40px;
+  height: 24px;
+  border: none;
+  border-radius: vars.$radius-full;
+  background: var(--color-border);
+  cursor: inherit;
+  transition: background-color 0.15s ease;
+
+  &.on {
+    background: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: vars.$shadow-sm;
+  transition: transform 0.15s ease;
+
+  .on & {
+    transform: translateX(16px);
+  }
+}

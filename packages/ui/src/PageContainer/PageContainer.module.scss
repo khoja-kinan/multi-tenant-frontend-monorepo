@@ -1,0 +1,13 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 vars.$space-6;
+  box-sizing: border-box;
+
+  @media (max-width: vars.$screen-sm) {
+    padding: 0 vars.$space-4;
+  }
+}

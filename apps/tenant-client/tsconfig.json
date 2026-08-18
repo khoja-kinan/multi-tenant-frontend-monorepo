@@ -1,0 +1,27 @@
+{
+  "extends": "@repo/typescript-config/react-app.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+
+    /* Vite / bundler overrides */
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "sourceMap": true,
+
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+
+    /* App-level linting (override base strictness if you want) */
+    "strict": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "types": ["vite/client"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

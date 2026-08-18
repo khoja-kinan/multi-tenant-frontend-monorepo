@@ -1,0 +1,22 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: vars.$space-2;
+  padding: 6px 12px;
+  border-radius: vars.$radius-full;
+  background: var(--app_accent_soft);
+  color: var(--app_accent);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}

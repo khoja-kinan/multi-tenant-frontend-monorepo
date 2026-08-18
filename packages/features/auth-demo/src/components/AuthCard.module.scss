@@ -1,0 +1,29 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.card {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-4;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--app_text);
+}
+
+.description {
+  margin: -#{vars.$space-2} 0 0;
+  font-size: 13px;
+  color: var(--app_text_muted);
+}
+
+@media (max-width: #{vars.$screen-xs}) {
+  .card {
+    max-width: 100%;
+  }
+}

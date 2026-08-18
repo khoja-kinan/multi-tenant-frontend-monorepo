@@ -1,0 +1,39 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-4;
+}
+
+.codeField input {
+  letter-spacing: 6px;
+  font-variant-numeric: tabular-nums;
+  font-size: 18px;
+  text-align: center;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--app_text_muted);
+
+  code {
+    background: var(--surface_raised_bg, rgba(0, 0, 0, 0.05));
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: vars.$space-3;
+}
+
+.back {
+  flex: 0 0 auto;
+}
+
+.submit {
+  flex: 1;
+}

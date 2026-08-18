@@ -1,0 +1,32 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: vars.$space-2;
+  padding: vars.$space-10 vars.$space-4;
+  color: var(--app_text_muted);
+}
+
+.icon {
+  opacity: 0.6;
+  margin-bottom: vars.$space-2;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--app_text);
+}
+
+.description {
+  font-size: 13px;
+  max-width: 320px;
+}
+
+.action {
+  margin-top: vars.$space-3;
+}

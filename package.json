@@ -1,0 +1,25 @@
+{
+  "name": "multi-tenant-frontend-monorepo",
+  "description": "A React/TypeScript multi-tenant frontend monorepo demonstrating shared architecture across multiple apps, built with Turborepo and pnpm workspaces.",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:host": "turbo run dev:host",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "typecheck": "turbo run typecheck",
+    "preview": "turbo run preview",
+    "clean": "rm -rf node_modules apps/**/node_modules packages/**/node_modules packages/features/**/node_modules .turbo",
+    "clear-cache": "rm -rf apps/**/.turbo packages/**/.turbo packages/features/**/.turbo"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "turbo": "^2.7.3",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18"
+  }
+}

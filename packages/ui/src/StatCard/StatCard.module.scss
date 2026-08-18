@@ -1,0 +1,22 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-1;
+  padding: vars.$space-4 vars.$space-5;
+  border-radius: vars.$radius-md;
+  background: var(--surface_bg, rgba(255, 255, 255, 0.08));
+  border: 1px solid var(--border_primary, rgba(255, 255, 255, 0.14));
+}
+
+.label {
+  font-size: 13px;
+  color: var(--app_text_muted, rgba(255, 255, 255, 0.72));
+}
+
+.value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--app_text, #ffffff);
+}

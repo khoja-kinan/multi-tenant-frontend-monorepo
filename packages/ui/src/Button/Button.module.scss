@@ -1,0 +1,47 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: vars.$space-2;
+  padding: 10px 18px;
+  border-radius: vars.$radius-sm;
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.primary {
+  background: var(--app_accent);
+  color: var(--app_accent_contrast);
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+.secondary {
+  background: var(--surface_bg);
+  color: var(--app_text);
+  border-color: var(--border_primary);
+
+  &:hover {
+    border-color: var(--app_accent);
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--app_text_muted);
+
+  &:hover {
+    color: var(--app_text);
+  }
+}

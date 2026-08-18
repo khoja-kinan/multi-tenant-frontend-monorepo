@@ -1,0 +1,23 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: vars.$space-6;
+}
+
+.link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app_text_muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--app_text);
+  }
+}
+
+.active {
+  color: var(--app_accent);
+}

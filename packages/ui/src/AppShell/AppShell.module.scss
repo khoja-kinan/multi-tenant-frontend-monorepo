@@ -1,0 +1,25 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--app_bg);
+  color: var(--app_text);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--app_header_bg);
+  border-bottom: 1px solid var(--border_primary);
+  backdrop-filter: blur(8px);
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--border_primary);
+  color: var(--app_text_muted);
+}

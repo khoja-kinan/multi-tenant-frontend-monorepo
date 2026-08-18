@@ -1,0 +1,23 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-4;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--app_text_muted);
+
+  code {
+    background: var(--surface_raised_bg, rgba(0, 0, 0, 0.05));
+    padding: 1px 4px;
+    border-radius: 4px;
+  }
+}
+
+.submit {
+  width: 100%;
+}

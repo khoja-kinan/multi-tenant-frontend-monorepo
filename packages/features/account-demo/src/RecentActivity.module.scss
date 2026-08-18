@@ -1,0 +1,101 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$space-4;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: vars.$space-3;
+  color: var(--app_text_muted);
+  font-size: 13px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: vars.$space-3;
+  padding: vars.$space-3 0;
+  border-bottom: 1px solid var(--border_primary);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.rowMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.type {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--app_text);
+}
+
+.date {
+  font-size: 12px;
+  color: var(--app_text_muted);
+}
+
+.rowEnd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.amount {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.credit {
+  color: var(--color-success, #16a34a);
+}
+
+.debit {
+  color: var(--app_text);
+}
+
+.status {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 1px 8px;
+  border-radius: vars.$radius-full;
+}
+
+.settled {
+  background: rgba(22, 163, 74, 0.12);
+  color: var(--color-success, #16a34a);
+}
+
+.pending {
+  background: rgba(217, 119, 6, 0.12);
+  color: #d97706;
+}
+
+.failed {
+  background: rgba(220, 38, 38, 0.12);
+  color: var(--color-danger, #dc2626);
+}

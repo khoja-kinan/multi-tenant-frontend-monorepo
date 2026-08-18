@@ -1,0 +1,55 @@
+.toggleWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  gap: 4px;
+
+  &.sidebar {
+    background: var(--sidebar_toggle_bg);
+  }
+  &.footer {
+    background: #0f1e29;
+  }
+}
+
+.iconButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  &.sidebar {
+    svg {
+      path {
+        fill: var(--sidebar_toggle_icon_color);
+      }
+    }
+  }
+  &.footer {
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.active {
+  border-radius: 5px;
+  border: 1px solid #171a1a;
+  &.sidebar {
+    background: var(--sidebar_toggle_active_bg);
+  }
+  &.footer {
+    background: #295870;
+  }
+}

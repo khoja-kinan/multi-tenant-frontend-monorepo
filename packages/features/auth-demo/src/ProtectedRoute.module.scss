@@ -1,0 +1,11 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.checking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: vars.$space-3;
+  padding: vars.$space-12 vars.$space-4;
+  color: var(--color-text-muted);
+  font-size: 13px;
+}

@@ -1,0 +1,32 @@
+@use "@repo/config/tokens.scss" as vars;
+
+.surface {
+  border-radius: vars.$radius-lg;
+  border: 1px solid var(--border_primary);
+  box-sizing: border-box;
+}
+
+.level-base {
+  background: var(--surface_bg);
+}
+
+.level-raised {
+  background: var(--surface_raised_bg, var(--surface_bg));
+  box-shadow: vars.$shadow-sm;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: vars.$space-3;
+}
+
+.padding-md {
+  padding: vars.$space-5;
+}
+
+.padding-lg {
+  padding: vars.$space-8;
+}
